@@ -1,3 +1,2 @@
 tidyr
-httr
 htmltab
