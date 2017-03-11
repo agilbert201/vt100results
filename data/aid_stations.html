@@ -1,0 +1,131 @@
+<!DOCTYPE html><html><head><title>100M Aid Stations 2016.xlsx</title><meta name="viewport" content="target-densitydpi=device-dpi,user-scalable=1,minimum-scale=1,maximum-scale=2.5,initial-scale=1,width=device-width"><link href='/static/spreadsheets2/client/css/3041570016-waffle_k_ltr.css' type='text/css' rel='stylesheet'><style type="text/css">
+        html { overflow: visible; }
+        #sheets-viewport { overflow: auto; }
+        #sheets-viewport.widget-viewport { overflow: hidden; }
+        .grid-container { overflow: visible; background: white;}
+        .grid-table-container { overflow: visible; }
+        #top-bar {
+          background: url("//ssl.gstatic.com/docs/spreadsheets/publishheader.png") repeat-x bottom;
+          margin: 0;
+          overflow: hidden;
+        }
+        #top-bar {
+          border-bottom: 1px solid #ccc;
+          padding: 6px 6px 0;
+        }
+        #doc-title { padding-bottom: 5px; }
+        #doc-title .name { font-size: 15px; }
+        #sheet-menu {
+          font-size: 13px;
+          margin: 6px 0 0;
+          padding: 0 0 5px;
+        }
+        #sheet-menu li {
+          display: inline;
+          list-style-type: none;
+          margin: 0;
+          padding: 5px 8px;
+        }
+        #sheet-menu li.active {
+          background-color: #fff;
+          font-weight: bold;
+          border: 1px solid #999;
+        }
+        #top-bar #sheet-menu li.active {
+          border-bottom: 0;
+        }
+        #sheet-menu a, #sheet-menu a:visited { color: #07c; }
+        #footer {
+          background: #f0f0f0;
+          border-top: 1px #ccc solid;
+          border-bottom: 1px #ccc solid;
+          font-size: 13;
+          padding: 10px 10px;
+        }
+        .dash {
+          padding: 0 6px;
+        }
+        .ritz .waffle a { color: inherit; }.ritz .waffle .s9{border-right: none;background-color:#ffffff;text-align:left;font-weight:bold;color:#ff0000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s5{border-right: none;background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s8{background-color:#ffffff;text-align:left;font-weight:bold;font-style:italic;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s7{background-color:#ffffff;text-align:left;font-style:italic;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s0{background-color:#ffffff;text-align:left;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s3{border-left: none;background-color:#ffffff;text-align:left;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s10{background-color:#ffffff;text-align:left;color:#ff0000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s4{background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s2{border-left: none;border-right: none;background-color:#ffffff;text-align:left;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s6{background-color:#ffffff;text-align:left;font-weight:bold;color:#ff0000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s11{background-color:#ffffff;text-align:center;color:#000000;font-family:'Times New Roman';font-size:11pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}.ritz .waffle .s1{border-right: none;background-color:#ffffff;text-align:left;font-weight:bold;color:#000000;font-family:'Times New Roman';font-size:12pt;vertical-align:bottom;white-space:nowrap;direction:ltr;padding:0px 3px 0px 3px;}</style><script type="text/javascript">
+        var activeSheetId;
+
+        function switchToSheet(id) {
+          if (document.getElementById('sheet-menu')) {
+            document.getElementById('sheet-button-' + activeSheetId)
+                .className = '';
+            document.getElementById('sheet-button-' + id).className = 'active';
+          }
+
+          document.getElementById(activeSheetId).style.display = 'none';
+          document.getElementById(id).style.display = '';
+          activeSheetId = id;
+
+          // posObjs() is defined in embeddedObjectJs (see EmbeddedObjectHtmlBuilder.java)
+          posObjs();
+          return false;
+        }
+        
+        function init() {
+        var optPageSwitcher;
+        
+        function resize() {
+          var optMobileWebHeader = document.getElementById('docs-ml-header-id');
+          var optTopBar = document.getElementById('top-bar');
+          var optFooter = document.getElementById('footer');
+          var sheetsViewport = document.getElementById('sheets-viewport');
+
+          if (optMobileWebHeader) {
+            sheetsViewport.style.marginTop = optMobileWebHeader.offsetHeight +
+                (optTopBar ? optTopBar.offsetHeight : 0) + 'px';
+          }
+          var adjustedHeight = window.innerHeight -
+              (optTopBar ? optTopBar.offsetHeight : 0) -
+              (optFooter ? optFooter.offsetHeight : 0);
+          var adjustedWidth = window.innerWidth;
+          sheetsViewport.style.width = (adjustedWidth + 'px');
+          sheetsViewport.style.height = (adjustedHeight + 'px');
+          if (optPageSwitcher) {
+            optPageSwitcher.resize(adjustedWidth, adjustedHeight);
+          }
+        }
+        resize();
+        window.onresize = resize;
+        }
+        </script><script>_docs_flag_initialData={"docs-mwid":true,"docs-smheo":false,"info_params":{},"ilcm":{"eui":"ADFN-cuk2N2wSYK5rh8hx3oQIH-Y1v5JC7pndAyXJzsv_Q70BR37s4ac6lDYNFlYsOYl2FXTmTpg","je":1,"sstu":1489240352339000,"si":"CLjovtHMztICFcIw7QodqkUCYw","ei":[5700559,5700402,5700880,5700058,5700551,5700505,5700016,5700547,5700535,5700306,5700019,5700658,5700100,5700888,5700430,5700130,5700410]},"drive_url":"//drive.google.com?usp\u003dsheets_web","docs-sup":"/spreadsheets"}; _docs_flag_cek= null ;</script></head><script>document.addEventListener('DOMContentLoaded', init);</script><body><div id="top-bar"><div id="doc-title"><span class="name">100M Aid Stations 2016.xlsx : VT 100 100 Mi Aid Stations</span></div></div><div id="sheets-viewport"><div id="1796561063" style="display:none;position:relative;" dir="ltr"><div class="ritz grid-container" dir="ltr"><table class="waffle" cellspacing="0" cellpadding="0"><thead><tr><th class="row-header freezebar-origin-ltr header-shim row-header-shim"></th><th id="1796561063C0" style="width:42px" class="header-shim"></th><th id="1796561063C1" style="width:184px" class="header-shim"></th><th id="1796561063C2" style="width:86px" class="header-shim"></th><th id="1796561063C3" style="width:86px" class="header-shim"></th><th id="1796561063C4" style="width:86px" class="header-shim"></th><th id="1796561063C5" style="width:86px" class="header-shim"></th><th id="1796561063C6" style="width:63px" class="header-shim"></th><th id="1796561063C7" style="width:97px" class="header-shim"></th></tr></thead><tbody><tr style='height:20px;'><th id="1796561063R0" style="height: 20px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 20px;">1</div></th><td class="s0"></td><td class="s1 softmerge"><div class="softmerge-inner" style="width: 354px; left: -1px;">Vermont 100 Mile Aid Stations 2016</div></td><td class="s2"></td><td class="s3"></td><td class="s3"></td><td class="s0"></td><td class="s0"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R1" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">2</div></th><td class="s4"></td><td class="s4">Aid Station</td><td class="s4"></td><td class="s4">Miles to</td><td class="s4"></td><td class="s4"></td><td class="s5 softmerge"><div class="softmerge-inner" style="width: 158px; left: -1px;">Aid Station</div></td><td class="s3"></td></tr><tr style='height:19px;'><th id="1796561063R2" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">3</div></th><td class="s4"></td><td class="s4">Name</td><td class="s4">MILEAGE</td><td class="s4">Next Aid</td><td class="s4">OPEN</td><td class="s4">CLOSE</td><td class="s4">TYPE</td><td class="s4"></td></tr><tr style='height:19px;'><th id="1796561063R3" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">4</div></th><td class="s0">1</td><td class="s0">Densmore Hill</td><td class="s0">7.0</td><td class="s0">4.5</td><td class="s0">4:30 AM</td><td class="s0">6:00 AM</td><td class="s6">U</td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R4" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">5</div></th><td class="s0">2</td><td class="s0">Dunham Hill</td><td class="s0">11.5</td><td class="s0">3.9</td><td class="s0">5:00 AM</td><td class="s0">7:20 AM</td><td class="s6">U</td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R5" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">6</div></th><td class="s0">3</td><td class="s0">Taftsville Bridge</td><td class="s7">15.4</td><td class="s0">2.2</td><td class="s0">5:30 AM</td><td class="s0">9:00 AM</td><td class="s6">A</td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R6" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">7</div></th><td class="s0">4</td><td class="s0">So. Pomfret</td><td class="s7">17.6</td><td class="s0">3.7</td><td class="s0">6:00 AM</td><td class="s0">9:30 AM</td><td class="s6">U</td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R7" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">8</div></th><td class="s4">5</td><td class="s4">Pretty House</td><td class="s8">21.3</td><td class="s4">4.0</td><td class="s4">6:30 AM</td><td class="s4">10:20 AM</td><td class="s6">AHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 289px; left: -1px;">Hard cut-off - 10:20 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R8" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">9</div></th><td class="s0">6</td><td class="s0">U-Turn</td><td class="s7">25.3</td><td class="s0">5.0</td><td class="s0">7:00 AM</td><td class="s0">11:30 AM</td><td class="s6">U</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R9" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">10</div></th><td class="s4">7</td><td class="s4">Stage Rd</td><td class="s8">30.3</td><td class="s4">3.6</td><td class="s4">7:45 AM</td><td class="s4">1:00 PM</td><td class="s6">AHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 1:00 PM</div></td></tr><tr style='height:19px;'><th id="1796561063R10" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">11</div></th><td class="s0">8</td><td class="s0">Route 12</td><td class="s7">33.9</td><td class="s0">5.3</td><td class="s0">8:15 AM</td><td class="s0">2:10 PM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R11" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">12</div></th><td class="s0">9</td><td class="s0">Lincoln Covered Bridge</td><td class="s7">39.2</td><td class="s0">4.1</td><td class="s0">9:00 AM</td><td class="s0">3:40 PM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R12" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">13</div></th><td class="s0">10</td><td class="s0">Lillians</td><td class="s7">43.3</td><td class="s0">3.7</td><td class="s0">9:30 AM</td><td class="s0">5:00 PM</td><td class="s6">AP</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R13" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">14</div></th><td class="s4">11</td><td class="s4">Camp 10 Bear</td><td class="s8">47.0</td><td class="s4">3.8</td><td class="s4">10:00 AM</td><td class="s4">6:00 PM</td><td class="s6">AMHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 6:00 PM</div></td></tr><tr style='height:19px;'><th id="1796561063R14" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">15</div></th><td class="s0">12</td><td class="s0">Pinky&#39;s</td><td class="s7">50.8</td><td class="s0">3.1</td><td class="s0">10:30 AM</td><td class="s0">7:10 PM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R15" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">16</div></th><td class="s0">13</td><td class="s0">Birminghams</td><td class="s7">53.9</td><td class="s0">4.6</td><td class="s0">11:00 AM</td><td class="s0">8:10 PM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R16" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">17</div></th><td class="s4">14</td><td class="s4">Margaritaville</td><td class="s8">58.5</td><td class="s4">3.1</td><td class="s4">11:30 AM</td><td class="s4">9:30 PM</td><td class="s6">AHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 9:30 PM</div></td></tr><tr style='height:19px;'><th id="1796561063R17" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">18</div></th><td class="s0">15</td><td class="s0">Puckerbrush</td><td class="s7">61.6</td><td class="s0">3.0</td><td class="s0">12:00 PM</td><td class="s0">10:30 PM</td><td class="s6">AP</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R18" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">19</div></th><td class="s0">16</td><td class="s0">Brown School House</td><td class="s7">64.6</td><td class="s0">4.8</td><td class="s0">12:30 PM</td><td class="s0">11:25 PM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R19" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">20</div></th><td class="s4">17</td><td class="s4">Camp 10 Bear</td><td class="s8">69.4</td><td class="s4">4.4</td><td class="s4">1:00 PM</td><td class="s4">1:00 AM</td><td class="s6">AMHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 1:00 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R20" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">21</div></th><td class="s0">18</td><td class="s0">Seabrook   </td><td class="s7">73.8</td><td class="s0">2.4</td><td class="s0">1:45 PM</td><td class="s0">2:15 AM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R21" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">22</div></th><td class="s4">19</td><td class="s4">Spirit of 76</td><td class="s8">76.2</td><td class="s4">4.1</td><td class="s4">2:00 PM</td><td class="s4">3:00 AM</td><td class="s6">AHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 3:00 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R22" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">23</div></th><td class="s0">20</td><td class="s0">Goodman&#39;s </td><td class="s7">80.3</td><td class="s0">3.0</td><td class="s0">2:30 PM</td><td class="s0">4:10 AM</td><td class="s6">U</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R23" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">24</div></th><td class="s0">21</td><td class="s0">Cow Shed</td><td class="s7">83.3</td><td class="s0">5.0</td><td class="s0">3:00 PM</td><td class="s0">5:00 AM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R24" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">25</div></th><td class="s4">22</td><td class="s4">Bill&#39;s</td><td class="s8">88.3</td><td class="s4">3.2</td><td class="s4">3:30 PM</td><td class="s4">6:30 AM</td><td class="s6">AMHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 6:30 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R25" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">26</div></th><td class="s0">23</td><td class="s0">Keating&#39;s</td><td class="s7">91.5</td><td class="s0">3.4</td><td class="s0">4:00 PM</td><td class="s0">7:30 AM</td><td class="s6">A</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R26" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">27</div></th><td class="s4">24</td><td class="s4">Polly&#39;s</td><td class="s8">94.9</td><td class="s4">2.6</td><td class="s4">4:30 PM</td><td class="s4">8:40 AM</td><td class="s6">AHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 192px; left: -1px;">Hard cut-off - 8:40 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R27" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">28</div></th><td class="s0">25</td><td class="s0">Sargent&#39;s</td><td class="s7">97.5</td><td class="s0">2.5</td><td class="s0">4:45 PM</td><td class="s0">9:20 AM</td><td class="s6">U</td><td class="s10"></td></tr><tr style='height:19px;'><th id="1796561063R28" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">29</div></th><td class="s4"></td><td class="s4">FINISH LINE</td><td class="s8">100 </td><td class="s4"></td><td class="s4">5:00 PM</td><td class="s4">10:00 AM</td><td class="s6">AMHP</td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 289px; left: -1px;">Finish line closes at 10:00 AM</div></td></tr><tr style='height:19px;'><th id="1796561063R29" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">30</div></th><td class="s0"></td><td class="s9 softmerge"><div class="softmerge-inner" style="width: 783px; left: -1px;">U = Unmanned    A = Manned  H = Handler Access  M = Medical Check P = Porta Potty</div></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td class="s2"></td></tr><tr style='height:19px;'><th id="1796561063R30" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">31</div></th><td class="s0"></td><td class="s0"></td><td class="s7"></td><td class="s7"></td><td class="s0"></td><td class="s11"></td><td class="s11"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R31" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">32</div></th><td class="s0"></td><td class="s5 softmerge"><div class="softmerge-inner" style="width: 589px; left: -1px;">Dogs are not allowed at ANY aid stations or at Silver Hill Meadow.</div></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td class="s2"></td><td class="s3"></td><td class="s3"></td></tr><tr style='height:19px;'><th id="1796561063R32" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">33</div></th><td class="s0"></td><td class="s0"></td><td class="s0"></td><td class="s0"></td><td class="s0"></td><td class="s11"></td><td class="s11"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R33" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">34</div></th><td class="s0"></td><td class="s0"></td><td class="s7"></td><td class="s7"></td><td class="s0"></td><td class="s11"></td><td class="s11"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R34" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">35</div></th><td class="s0"></td><td class="s0" colspan="6"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R35" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">36</div></th><td class="s0"></td><td class="s0" colspan="6"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R36" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">37</div></th><td class="s0"></td><td class="s0" colspan="6"></td><td class="s0"></td></tr><tr style='height:19px;'><th id="1796561063R37" style="height: 19px;" class="row-headers-background row-header-shim"><div class="row-header-wrapper" style="line-height: 19px;">38</div></th><td class="s0"></td><td class="s0" colspan="5"></td><td class="s11"></td><td class="s0"></td></tr></tbody></table></div></div></div><div id="footer"><span>Published by <a target="_blank" title="Learn more about Google Sheets" href="https://docs.google.com/spreadsheets/?usp=sheets_web">Google Sheets</a></span><span class="dash">&ndash;</span><a href="https://docs.google.com/abuse?id=19UDxQuK5WummNLvVgodsoPnSNRaVh2vBWr-f6lCYkDw">Report Abuse</a><span class="dash">&ndash;</span><span>Updated automatically every 5 minutes</span></div>
+<script type='text/javascript'>
+function posObj(sheet, id, row, col, x, y) {
+  var rtl = false;
+  var sheetElement = document.getElementById(sheet);
+  if (!sheetElement) {
+    sheetElement = document.getElementById(sheet + '-grid-container');
+  }
+  if (sheetElement) {
+    rtl = sheetElement.getAttribute('dir') == 'rtl';
+  }
+  var r = document.getElementById(sheet+'R'+row);
+  var c = document.getElementById(sheet+'C'+col);
+  if (r && c) {
+    var objElement = document.getElementById(id);
+    var s = objElement.style;
+    var t = y;
+    while (r && r != sheetElement) {
+      t += r.offsetTop;
+      r = r.offsetParent;
+    }
+    var offsetX = x;
+    while (c && c != sheetElement) {
+      offsetX += c.offsetLeft;
+      c = c.offsetParent;
+    }
+    if (rtl) {
+      offsetX -= objElement.offsetWidth;
+    }
+    s.left = offsetX + 'px';
+    s.top = t + 'px';
+    s.display = 'block';
+    s.border = '1px solid #000000';
+  }
+};
+function posObjs() {
+};
+posObjs();</script>
+<script type="text/javascript">activeSheetId = '1796561063'; switchToSheet('1796561063');</script></body></html>
