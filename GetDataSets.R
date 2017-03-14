@@ -1,6 +1,7 @@
 ##
 ## Support function to retrieve data sets
 ##
+
 datasets <- list(c("2015_final.html",
                    "http://www.coolrunning.com/results/15/vt/Jul19_VT100E_set1.shtml"),
                  c("2015_splits.html",
@@ -31,5 +32,4 @@ GetDataSets <- function() {
         download.file(aid, fp, method = "curl")
     }
 }
-
 
