@@ -15,19 +15,19 @@ ReadSplits <- function(year) {
 }
 
 ReadFinals <- function(year) {
-    ## Pull <pre> out of each final, do some cleanup and parse
+    ## Pull <pre> out of each final, do some cleanup and load to table
     fn <- paste(year, "_final.html", sep="")
     fp <- file.path("data", fn)
-    #output_fn <- paste(year, "_final.txt", sep="")
-    #output_fp <- file.path("data", output_fn)
     raw_html <- htmlParse(fp)
     ns <- getNodeSet(raw_html, "//pre")
     xmlText <- xmlValue(ns[[1]])
     # do some cleaning
     xmlText <- str_replace_all(xmlText, "\r", "")
+    # should really be \uFFDD but by now it's this gibberish
     xmlText <- str_replace_all(xmlText, "Ã¯Â¿Â½", "_")
+    xmlText <- str_replace(xmlText, "[\\*]{3}", "")
     
-    #skip_rows <- if (year == "2015") 8 else 9
+    # garbage lines in the pre section
     skip_rows <- 9
     
     # read into a table
@@ -35,14 +35,6 @@ ReadFinals <- function(year) {
                           col_names = c("Place", "Bib", "Name", "Age", "Class", "Time"))
     # for now treat last col as char as time will overrun past 23:59
     read_fwf(xmlText, col_positions = col_spec, skip = skip_rows, col_types = "iicccc")
-    
-    #lines <- str_split(xmlText, "\n")
-    #lines <- unlist(lines)
-    #lines <- str_replace_all(lines, "\r", "")
-    
-    # this is a hack to get rid of 'replacement characters'
-    # should really be \uFFDD but by now it's this gibberish
-    #lines <- str_replace_all(lines, "Ã¯Â¿Â½", "_")
 }
 
 ReadAidStations <- function() {
