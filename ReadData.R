@@ -6,12 +6,12 @@ library(readr)
 library(htmltab)
 library(XML)
 
-ReadSplits <- function(year) {
-    # for 2015 it's '100 Mile Splits', for 2016 '100M Splits'
-    fn <- paste(year, "_splits.html", sep="")
-    fp <- file.path("data", fn)
-    htmltab(doc = fp,
-            which = "//h3[contains(text(), 'Splits')]/following-sibling::table")
+ReadAidStations <- function() {
+    aidfp <- file.path("data", "aid_stations.html")
+    aid_t <- readHTMLTable(aidfp, skip.rows = c(1:3, 30:40), stringsAsFactors = FALSE, which = 1)
+    aid_t <- aid_t[3:8]
+    colnames(aid_t) <- c("Name", "Mileage", "Next", "Open", "Close", "Type")
+    aid_t
 }
 
 ReadFinals <- function(year) {
@@ -37,7 +37,12 @@ ReadFinals <- function(year) {
     read_fwf(xmlText, col_positions = col_spec, skip = skip_rows, col_types = "iicccc")
 }
 
-ReadAidStations <- function() {
-    aidfp <- file.path("data", "aid_stations.html")
-    readHTMLTable(aidfp, skip.rows = c(1:3, 30:40), stringsAsFactors = FALSE, which = 1)
+## TODO
+
+ReadSplits <- function(year) {
+    # for 2015 it's '100 Mile Splits', for 2016 '100M Splits'
+    fn <- paste(year, "_splits.html", sep="")
+    fp <- file.path("data", fn)
+    htmltab(doc = fp,
+            which = "//h3[contains(text(), 'Splits')]/following-sibling::table")
 }
