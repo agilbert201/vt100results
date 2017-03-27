@@ -3,7 +3,6 @@
 ##
 library(stringr)
 library(readr)
-library(htmltab)
 library(XML)
 
 ReadAidStations <- function() {
@@ -37,12 +36,12 @@ ReadFinals <- function(year) {
     read_fwf(xmlText, col_positions = col_spec, skip = skip_rows, col_types = "iicccc")
 }
 
-## TODO
-
 ReadSplits <- function(year) {
     # for 2015 it's '100 Mile Splits', for 2016 '100M Splits'
     fn <- paste(year, "_splits.html", sep="")
     fp <- file.path("data", fn)
-    htmltab(doc = fp,
-            which = "//h3[contains(text(), 'Splits')]/following-sibling::table")
+    doc <- htmlParse(fp, encoding = "UTF-8")
+    xp <- "//h3[contains(text(), 'Splits')]/following-sibling::table"
+    table_node <- getNodeSet(doc, xp)
+    readHTMLTable(table_node[[1]], stringsAsFactors = FALSE)
 }
