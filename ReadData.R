@@ -5,7 +5,7 @@ library(stringr)
 library(readr)
 library(XML)
 
-ReadAidStations <- function() {
+read_aid_stations <- function() {
     aidfp <- file.path("data", "aid_stations.html")
     aid_t <- readHTMLTable(aidfp, skip.rows = c(1:3, 30:40), stringsAsFactors = FALSE, which = 1)
     aid_t <- aid_t[3:8]
@@ -13,7 +13,7 @@ ReadAidStations <- function() {
     aid_t
 }
 
-ReadFinals <- function(year) {
+read_finals <- function(year) {
     ## Pull <pre> out of each final, do some cleanup and load to table
     fn <- paste(year, "_final.html", sep="")
     fp <- file.path("data", fn)
@@ -36,7 +36,7 @@ ReadFinals <- function(year) {
     read_fwf(xmlText, col_positions = col_spec, skip = skip_rows, col_types = "iicccc")
 }
 
-ReadSplits <- function(year) {
+read_splits <- function(year) {
     # for 2015 it's '100 Mile Splits', for 2016 '100M Splits'
     fn <- paste(year, "_splits.html", sep="")
     fp <- file.path("data", fn)
