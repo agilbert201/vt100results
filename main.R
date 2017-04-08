@@ -1,6 +1,6 @@
-source("GetDataSets.R")
-source("ReadData.R")
-source("CleanData.R")
+source("get_data_sets.R")
+source("read_data.R")
+source("clean_data.R")
 
 ## Ensure have raw data
 get_data_sets()
