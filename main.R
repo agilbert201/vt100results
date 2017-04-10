@@ -19,3 +19,9 @@ splits_2015 <- clean_splits(aid_stations, splits_2015, "2015")
 
 splits_2016 <- clean_splits(aid_stations, splits_2016, "2016")
 splits_2016 <- splits_2016[!is.na(splits_2016$Bib),]
+
+## Convert
+# splits_2015[4:22] <- sapply(splits_2015[4:22], apply_conversion)
+## number of out of band values, i.e. by 12hrs (24 vs 12)
+
+

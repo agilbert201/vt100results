@@ -1,5 +1,4 @@
 library(stringr)
-library(lubridate)
 
 #
 # Given string rep in hh:mm form, i.e. 2:00 or 14:23 convert to duration
@@ -12,6 +11,9 @@ convert_to_duration <- function(dur) {
         return(NA)
     }
     hrs <- as.integer(parts[1])
-    mins <- as.integer(parts[2])
-    secs <- hrs * 60 * 60 + mins * 60
+    mins <- as.integer(parts[2]) + hrs * 60
+}
+
+apply_conversion <- function(col) {
+    sapply(col, convert_to_duration, USE.NAMES = FALSE)
 }
