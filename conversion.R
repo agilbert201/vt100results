@@ -3,6 +3,8 @@ library(stringr)
 # Iterate over cells in each row and given "time of day" rep in hh:mm form convert to 
 # duration in minutes. Note starts with dataframe and does for loops as needs prev context
 # and is processing across the row. I have no idea how to do this in "col/vector" way...
+
+# DONT USE? Do it by columns with adjustments for out of band vals
 time_of_day_to_duration <- function(df) {
     for(r in c(1:nrow(df))) {
         base_hour <- 4 # 4:00 am start
@@ -31,6 +33,17 @@ time_of_day_to_duration <- function(df) {
     df
 }
 
+#
+# for 2016 splits, convert "time" to total elapsed time in minutes (duration)
+#
+convert_time_to_duration <- function(time) {
+    as_dur <- convert_to_duration(time)
+    if (!is.na(as_dur)) {
+        as_dur <- as_dur - 240 # 4am baseline
+        if (as_dur < 0) { as_dur <- NA}
+    }
+    as_dur
+}
 
 # Given string rep in hh:mm form, i.e. 2:00 or 14:23 convert to duration in minutes
 convert_to_duration <- function(dur) {

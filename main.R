@@ -29,9 +29,8 @@ results_2015$Finish <- str_sub(results_2015$Finish, 1, 5)
 results_2016 <- merge(splits_2016, finals_2016[c(2,6)])
 results_2016$Finish <- str_sub(results_2016$Finish, 1, 5)
 
-
 ## Convert
 # splits_2015[4:22] <- sapply(splits_2015[4:22], apply_conversion)
 ## number of out of band values, i.e. by 12hrs (24 vs 12)
 
-
+# sort(sapply(results_2016$`Taftsville Bridge`, convert_time_to_duration, USE.NAMES = FALSE))
