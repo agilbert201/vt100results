@@ -1,5 +1,26 @@
 library(stringr)
 
+# Given string rep in hh:mm form, i.e. 2:00 or 14:23 convert to duration in minutes
+convert_to_duration <- function(dur) {
+    if (str_length(dur) < 1) {
+        return(NA)
+    }
+    parts <- unlist(str_split(dur, ":"))
+    if (length(parts) < 2) {
+        return(NA)
+    }
+    hrs <- as.integer(parts[1])
+    mins <- as.integer(parts[2]) + hrs * 60
+}
+
+# given a duration, is it between start and end? (all in "hh:mm" format)
+finish_between <- function(dur, start, end) {
+    start_mins <- convert_to_duration(start)
+    end_mins <- convert_to_duration(end)
+    dur_mins <- convert_to_duration(dur)
+    return (dur_mins >= start_mins && dur_mins <= end_mins)
+}
+
 # Iterate over cells in each row and given "time of day" rep in hh:mm form convert to 
 # duration in minutes. Note starts with dataframe and does for loops as needs prev context
 # and is processing across the row. I have no idea how to do this in "col/vector" way...
@@ -43,19 +64,6 @@ convert_time_to_duration <- function(time) {
         if (as_dur < 0) { as_dur <- NA}
     }
     as_dur
-}
-
-# Given string rep in hh:mm form, i.e. 2:00 or 14:23 convert to duration in minutes
-convert_to_duration <- function(dur) {
-    if (str_length(dur) < 1) {
-        return(NA)
-    }
-    parts <- unlist(str_split(dur, ":"))
-    if (length(parts) < 2) {
-        return(NA)
-    }
-    hrs <- as.integer(parts[1])
-    mins <- as.integer(parts[2]) + hrs * 60
 }
 
 apply_conversion <- function(col) {
